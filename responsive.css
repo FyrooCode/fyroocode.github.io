@@ -1,0 +1,23 @@
+@media (min-width: 576px) {
+    nav ul {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (min-width: 768px) {
+    nav ul {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (min-width: 992px) {
+    nav ul {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (min-width: 1200px) {
+    nav ul {
+        flex-wrap: nowrap;
+    }
+}

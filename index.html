@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navbar.css"> <!-- Added navbar CSS -->
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet"> <!-- Google Fonts link -->
+</head>
+<body>
+    <div class="blob"></div>
+    <div class="blob-left"></div> <!-- Added blob on the center left -->
+    <button class="switcher">Toggle Dark Mode</button>
+    <nav>
+        <ul>
+            <li><span class="brand" data-translate="brand">BLKRBL</span></li> <!-- Added data-translate attribute -->
+            <li><a href="#about" data-translate="about">About</a></li>
+            <li><a href="#projects" data-translate="projects">Projects</a></li>
+            <li><a href="#contact" data-translate="contact">Contact</a></li>
+            <li>
+                <select id="language-switcher">
+                    <option value="en">EN</option>
+                    <option value="es">ES</option>
+                    <option value="id">ID</option>
+                    <option value="jp">JP</option>
+                    <!-- Add more languages as needed -->
+                </select>
+            </li>
+        </ul>
+    </nav>
+    <section class="intro">
+        <div class="intro-text">
+            <h1 data-translate="intro">Hi, I'm Bell<br>A fullstack web developer</h1> <!-- Added data-translate attribute -->
+        </div>
+        <div class="scroll-down">
+            <span>&#x2193;</span> <!-- Arrow symbol -->
+        </div>
+    </section>
+    <section class="tools">
+        <h2 data-translate="tools-title">Tools I Use</h2> <!-- Added data-translate attribute -->
+        <div class="tools-grid">
+            <div class="tool-circle"><img src="img/laravel.png" alt="Laravel"></div>
+            <div class="tool-circle"><img src="img/nextjs.png" alt="Next.js"></div>
+            <div class="tool-circle"><img src="img/react.png" alt="React"></div>
+            <div class="tool-circle"><img src="img/vue.png" alt="Vue.js"></div>
+            <div class="tool-circle"><img src="img/flutter.png" alt="Flutter"></div>
+            <div class="tool-circle"><img src="img/mysql.png" alt="MySQL"></div>
+        </div>
+    </section>
+    <section id="projects" class="projects"> <!-- Added ID to the section -->
+        <h2 data-translate="projects-title">Projects</h2> <!-- Added data-translate attribute -->
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3 data-translate="project1-title">Project 1</h3> <!-- Added data-translate attribute -->
+                <p data-translate="project1-desc">Description of project 1.</p> <!-- Added data-translate attribute -->
+            </div>
+            <div class="project-card">
+                <h3 data-translate="project2-title">Project 2</h3> <!-- Added data-translate attribute -->
+                <p data-translate="project2-desc">Description of project 2.</p> <!-- Added data-translate attribute -->
+            </div>
+            <div class="project-card">
+                <h3 data-translate="project3-title">Project 3</h3> <!-- Added data-translate attribute -->
+                <p data-translate="project3-desc">Description of project 3.</p> <!-- Added data-translate attribute -->
+            </div>
+        </div>
+    </section>
+    <script src="scripts.js"></script>
+</body>
+</html>

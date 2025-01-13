@@ -1,0 +1,213 @@
+:root {
+    --nav-background: rgba(255, 255, 255, 0.15);
+    --nav-border: 1px solid rgba(255, 255, 255, 0.18);
+    --accent-color: #a10221;
+    --text-color-dark: #fff;
+    --text-color-light: #333;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+nav {
+    background: var(--nav-background);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 50px; /* Updated to make it capsule-like */
+    border: var(--nav-border);
+    padding: 0.5rem 2rem;
+    margin-top: 1rem;
+    max-width: calc(100% - 2rem); /* Ensure the navbar doesn't exceed the screen width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    transition: background 0.3s, box-shadow 0.3s, margin-top 0.3s;
+    position: sticky; /* Make the navbar sticky */
+    top: 1rem; /* Stick to the top with spacing */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+body.dark-mode nav {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none; /* Removed box shadow */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0.5rem 1rem;
+}
+
+nav ul li a {
+    color: var(--text-color-dark);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    position: relative;
+    transition: color 0.3s;
+    cursor: pointer; /* Added cursor pointer */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+body.dark-mode nav ul li a {
+    color: var(--text-color-light);
+}
+
+body.dark-mode nav ul li a:hover::after {
+    background-color: var(--accent-color);
+}
+
+.brand {
+    font-family: 'Major Mono Display', monospace; /* Use Major Mono Display for the brand text */
+    font-size: 1.5rem;
+    color: var(--text-color-dark);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* Added cursor pointer */
+}
+
+.brand::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--accent-color);
+    z-index: -1;
+    transition: height 0.5s;
+}
+
+.brand:hover::after {
+    height: 100%;
+}
+
+.brand:hover {
+    animation: shadow-pop-tr 0.3s linear both;
+}
+
+body.dark-mode .brand {
+    color: var(--text-color-light);
+}
+
+/* Language switcher styles */
+nav ul li select {
+    background: transparent;
+    border: none;
+    color: var(--text-color-dark);
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+    padding: 0.5rem 1rem;
+    border-radius: 50px; /* Make it capsule-like */
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode nav ul li select {
+    color: var(--text-color-light);
+}
+
+/* Animation for shadow-pop-tr */
+@-webkit-keyframes shadow-pop-tr {
+  0% {
+    -webkit-box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+            box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-box-shadow: 1px -1px #3e3e3e, 2px -2px #3e3e3e, 3px -3px #3e3e3e, 4px -4px #3e3e3e, 5px -5px #3e3e3e, 6px -6px #3e3e3e, 7px -7px #3e3e3e, 8px -8px #3e3e3e;
+            box-shadow: 1px -1px #3e3e3e, 2px -2px #3e3e3e, 3px -3px #3e3e3e, 4px -4px #3e3e3e, 5px -5px #3e3e3e, 6px -6px #3e3e3e, 7px -7px #3e3e3e, 8px -8px #3e3e3e;
+    -webkit-transform: translateX(-8px) translateY(8px);
+            transform: translateX(-8px) translateY(8px);
+  }
+}
+@keyframes shadow-pop-tr {
+  0% {
+    -webkit-box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+            box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+    -webkit-transform: translateX(0) translateY(0);
+            transform: translateX(0) translateY(0);
+  }
+  100% {
+    -webkit-box-shadow: 1px -1px #3e3e3e, 2px -2px #3e3e3e, 3px -3px #3e3e3e, 4px -4px #3e3e3e, 5px -5px #3e3e3e, 6px -6px #3e3e3e, 7px -7px #3e3e3e, 8px -8px #3e3e3e;
+            box-shadow: 1px -1px #3e3e3e, 2px -2px #3e3e3e, 3px -3px #3e3e3e, 4px -4px #3e3e3e, 5px -5px #3e3e3e, 6px -6px #3e3e3e, 7px -7px #3e3e3e, 8px -8px #3e3e3e;
+    -webkit-transform: translateX(-8px) translateY(8px);
+            transform: translateX(-8px) translateY(8px);
+  }
+}
+
+/* Language switcher capsule */
+.language-switcher {
+    background: var(--nav-background);
+    backdrop-filter: blur(13.5px);
+    -webkit-backdrop-filter: blur(13.5px);
+    border-radius: 50px; /* Make it capsule-like */
+    border: var(--nav-border);
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s, box-shadow 0.3s;
+    position: sticky; /* Make the language switcher sticky */
+    top: 1rem; /* Stick to the top with spacing */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+body.dark-mode .language-switcher {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: none; /* Removed box shadow */
+}
+
+.language-switcher select {
+    background: transparent;
+    border: none;
+    color: var(--text-color-dark);
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
+
+body.dark-mode .language-switcher select {
+    color: var(--text-color-light);
+}
+
+@media (max-width: 576px) {
+    nav {
+        padding: 0.5rem 1rem; /* Adjust padding on mobile */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0.5rem; /* Adjust margin on mobile */
+    }
+}
