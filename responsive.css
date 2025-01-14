@@ -1,6 +1,27 @@
+@media (max-width: 576px) {
+    .intro-text {
+        margin-top: 5rem; /* Adjust to push text higher on mobile */
+    }
+
+    .tools {
+        margin-top: 10rem; /* Ensure the section appears right below the arrow on mobile */
+    }
+
+    .project-card {
+        width: calc(100% - 2rem); /* Full width minus padding */
+        margin: 0 1rem; /* Add left and right margin */
+    }
+
+    .project-card img {
+        width: 100%; /* Ensure the image takes full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 10px; /* Rounded corners for the image on mobile */
+    }
+}
+
 @media (min-width: 576px) {
-    nav ul {
-        flex-wrap: nowrap;
+    .projects-grid {
+        justify-content: center; /* Center the project cards */
     }
 }
 
@@ -8,16 +29,28 @@
     nav ul {
         flex-wrap: nowrap;
     }
+
+    .projects-grid {
+        justify-content: center; /* Center the project cards */
+    }
 }
 
 @media (min-width: 992px) {
     nav ul {
         flex-wrap: nowrap;
     }
+
+    .projects-grid {
+        justify-content: center; /* Center the project cards */
+    }
 }
 
 @media (min-width: 1200px) {
     nav ul {
         flex-wrap: nowrap;
+    }
+
+    .projects-grid {
+        justify-content: center; /* Center the project cards */
     }
 }
