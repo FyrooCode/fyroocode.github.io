@@ -24,7 +24,7 @@ body {
     width: 100%;
     max-width: 850px; /* Set a max-width for the container */
     padding: 1rem; /* Added padding to the container */
-    border: 2px solid red; /* Added border for visualization */
+    /* border: 2px solid red; Added border for visualization */
 }
 
 body.dark-mode {
